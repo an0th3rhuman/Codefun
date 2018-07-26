@@ -20,6 +20,7 @@
 <section class="well well-lg">
   <div class="col-sm">
     <div id="login" style="margin-left:10%;">
+      
       <input type="text" id="name" placeholder="Username" required>
       <input type="password" id="password" placeholder="Password" required>
       <input type="submit" value="Login" onclick="login()">
@@ -35,7 +36,7 @@
         <i class="fa fa-google fa-fw"></i>
       </a>
       <div>
-        <a href="#" class="bb btn"> Register </a>
+        <a href="signup.html" class="bb btn"> Register </a>
       </div>
     </div>
 </section>
@@ -288,11 +289,34 @@
   {
     console.log("heyy")
     var name = document.getElementById("name").value;
+    var password = document.getElementById("password").value;
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var pwd = document.getElementById("password").value;
     if(name.match(mailformat))
     {
-      alert("login successful")
+      if(password.length>=6){
+      var caps= /[A-Z]/
+      if(password.match(caps))
+      {
+          var num =/[0-9]/
+          if(password.match(num))
+          {alert("Login successful")
+          window.location.assign("dashboard.html");
+}
+          
+          else
+          alert("Password needs to contain a number")
+        
+        
+      }
+      else{
+        alert("First character must be capital in the password")
+      }
+      }
+      else
+      {
+        alert("Password must be atleast 6 characters long")
+      }
     }
     else
     alert("login failed, please enter a valid email id")
