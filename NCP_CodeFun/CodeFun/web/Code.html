@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+--><html>
+    <body>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <header class="page-header">
+        <title>CodeFun.</title>
+        <div>
+            <span style="float: left; margin-left:5%; font-size: 50px;" class="fa fa-graduation-cap"></span>
+          </div>
+          <div style>
+            <h1 style="color: darkgreen; font:bold;">Code, learn, develop with CodeFun.</h5>
+            <h3  style="color: darkgreen; margin-left: 5%; " id="name"></h3>
+                <ul class="nav nav-tabs" style="margin-left: 4%;">
+                    <li ><a href="home.html">Progress</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                      <li><a href="landingpage.html">Logout</a></li>
+                    
+                  </ul>
+    </header>
+    <div class="row">
+        
+        <form action="basic.html">
+            
+        <input  type="image" class="btn" src="./assets/basic.png" alt="basic" style="margin-left: 30%;height:20% ;width:30%; float: left; "> 
+        </form>
+    </div>
+        <div class="row">
+        <form action="advanced.html">
+             
+        <input type="image" class="btn" src="./assets/advanced.png" alt="basic" style="margin-left:30%; margin-right:13%;height:20% ;width:30%; float: left; ">
+        </form>
+    </div>
+        <script>
+           var username= getCookie("name");
+          document.getElementById("name").innerHTML = "Welcome back  "+username +'!';
+           console.log(username)
+         function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+            </script>
+            <style>
+                
+.row .btn:hover {
+    background-color: black;
+}
+            </style>
+    </body>
+</html>

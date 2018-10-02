@@ -1,0 +1,82 @@
+.terminal{
+	margin:auto;
+	border-radius:12px;
+	height:500px;
+	background-color:rgba(0,0,0,.7);
+	max-width:30%;
+	
+}
+p{
+	margin:0;
+}
+table{
+	border-spacing:20px 10px;
+}
+th{
+	font-weight:normal;
+}
+tr td:nth-child(1), tr th:nth-child(1){
+	text-align:left;
+}
+tr td:nth-child(2), tr th:nth-child(2){
+	text-align:right;
+}
+tr td:nth-child(3), tr th:nth-child(3){
+	text-align:right;
+}
+tr td:nth-child(4), tr th:nth-child(4){
+	text-align:left;
+}
+.terminal-text{
+	padding:15px;
+	font-family: "Lucida Console";
+	color:white;
+}
+.terminal-button-bar{
+	width:100%;
+	height:50px;
+	background-color:#cccccc;
+	border-radius:10px 10px 0 0;	
+}
+.terminal-buttons{
+	padding-top:15px;
+	padding-left:10px;
+}
+.btn.circle{
+	display:inline-block;
+	height:18px;
+	width:18px;
+	border-radius:50%;
+	background-color:white;
+	margin-right:4px;
+}
+.btn.circle.close{
+	border-style:solid; 
+	border-color:#af3533;
+	border-width:3px;
+	background-color:#DD4542;
+}
+.btn.circle.minimize{
+	border-style:solid; 
+	border-color:#c99430;
+	border-width:3px;
+	background-color:#FDBC40;
+}
+.btn.circle.expand{
+	border-style:solid; 
+	border-color:#289b38;
+	border-width:3px;
+	background-color:#33C748;
+}
+.indent{
+	padding-top:40px;
+	padding-bottom:40px;
+	padding-left:100px;
+}
+.input-line{
+	margin-top:30px;
+}
+.yellow{
+	color:yellow;
+}
+

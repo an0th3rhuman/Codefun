@@ -1,0 +1,6 @@
+<!ELEMENT Users (UserInfo*)>
+<!ELEMENT UserInfo (Name,Email,Subject,Message)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Email (#PCDATA)>
+<!ELEMENT Subject (#PCDATA)>
+<!ELEMENT Message (#PCDATA)>
