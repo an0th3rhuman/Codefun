@@ -1,57 +1,71 @@
 <html>
- <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
-    $(document).ready(function(){
-        $("button").click(function(){
+        $(document).ready(function () {
+            
+            $("button").click(function () {
 
-                    var to_compile = {
-                            "LanguageChoice": $("#sellang").val(),
-                            "Program": $("#code").val(),
-                            "Input": "",
-                            "CompilerArgs" : ""
-                    };
+                var to_compile = {
+                    "LanguageChoice": $("#sellang").val(),
+                    "Program": $("#text").val(),
+                    "Input": "",
+                    "CompilerArgs": ""
+                };
 
-                    $.ajax ({
-                                url: "http://rextester.com/rundotnet/api",
-                                type: "POST",
-                                data: to_compile
-                            }).done(function(data) {
-                                alert(JSON.stringify(data));
-                            }).fail(function(data, err) {
-                                alert("fail " + JSON.stringify(data) + " " + JSON.stringify(err));
-                        });
+                $.ajax({
+                    url: "http://rextester.com/rundotnet/api",
+                    type: "POST",
+                    data: to_compile
+                }).done(function (data) {
+                    var str = JSON.stringify(data);
+                    let arr = str.split(",");
+                    let result = arr[2].substring(10, )
+                    result = result.substring(0, result.length - 3);
+                    console.log(result);
+
+
+                }).fail(function (data, err) {
+                    alert("fail " + JSON.stringify(data) + " " + JSON.stringify(err));
+                });
             });
-    });
+        });
     </script>
-    </head>
- <body>
- <form action = "">
-  <h1>Please select a language</h1>
-  <fieldset>
-  <select id = "sellang">
-   <option value = "1">C#</option>
-   <option value = "2">VB.NET</option>
-   <option value = "3">F#</option>
-   <option value = "4">Java</option>
-   <option value = "5" selected="selected">Python</option>
-   <option value = "6">C(gcc)</option>
-   <option value = "7">C++(gcc)</option>
-   <option value = "9">PHP</option>
-   <option value = "43">Kotlin</option>
-  </select>
-  
-  </fieldset>
- </form>
-<textarea id="code" width = "100%" height = "100%">
-print("Enjoy coding in codefun")      
+</head>
+
+<body>
+
+    <div id="wrapper" style="float:left; margin-left:15%;">
+            <h4 style="font-family: consolas, courier new, monospace;">Please select a language</h4> <br> <br>
+
+        <form action="">
+            <fieldset>
+                <select id="sellang">
+                    <option value="1">C#</option>
+                    <option value="2">VB.NET</option>
+                    <option value="3">F#</option>
+                    <option value="4">Java</option>
+                    <option value="5" selected="selected">Python</option>
+                    <option value="6">C(gcc)</option>
+                    <option value="7">C++(gcc)</option>
+                    <option value="9">PHP</option>
+                    <option value="43">Kotlin</option>
+                </select>
+
+            </fieldset>
+        </form>
+        <br>
+        <br>
+        <textarea  id="text" name="text" rows="20" style=" height: 100%; width:100%;">print("Enjoy coding in codefun")      
     </textarea>
-    <button id="run">Run</button>
+    <br>
+        <button id="button" class="btn second">Run</button>
+    </div>
 
 
 
-
- <!--
+    <!--
 
  C# = 1
     VB.NET = 2
@@ -97,5 +111,95 @@ print("Enjoy coding in codefun")
     Kotlin = 43
     Brainfuck = 44
     Fortran = 45 -->
- </body>
+    <style>
+      * {
+  outline:none;
+	border:none;
+	margin:0px;
+	padding:0px;
+	font-family:Courier, monospace;
+}
+body {
+	background:rgba(199, 199, 199, 0.555) url(https://static.tumblr.com/maopbtg/a5emgtoju/inflicted.png) repeat;        
+}
+#paper {
+	color:grey;
+	font-size:12px;
+}
+
+#text {
+	width:100%;
+	overflow:hidden;
+	background-color:rgba(208, 240, 240, 0.938);
+	color:rgb(21, 116, 172);
+	font-family:Courier, monospace;
+	font-weight:normal;
+	font-size:18px;
+	resize:none;
+	line-height:10px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:45px;
+	padding-bottom:34px;
+	background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+	background-repeat:repeat-y, repeat;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	-webkit-box-shadow: 0px 2px 14px #000;
+	box-shadow: 0px 2px 14px #000;
+	border-top:1px solid #FFF;
+	border-bottom:1px solid #FFF;
+}
+#title {
+	background-color:transparent;
+	border-bottom:3px solid #FFF;
+	color:#FFF;
+	font-size:20px;
+	font-family:Courier, monospace;
+	height:28px;
+	font-weight:bold;
+	width:220px;
+}
+#button {
+	cursor:pointer;
+	margin-top:20px;
+	float:right;
+	height:40px;
+	padding-left:24px;
+	padding-right:24px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:20px;
+	color:#FFF;
+	text-shadow: 0px -1px 0px #000000;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border-top:1px solid #FFF;
+	-webkit-box-shadow: 0px 2px 14px #000;
+	box-shadow: 0px 2px 14px #000;
+	background-color: #62add6;
+	background-image:url(https://static.tumblr.com/maopbtg/ZHLmgtok7/button.png);
+	background-repeat:repeat-x;
+}
+#button:active {
+	zoom: 1;
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+#button:focus {
+	zoom: 1;
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+#wrapper {
+	width:60%;
+	height:60%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:24px;
+	margin-bottom:100px;
+}
+    </style>
+</body>
+
 </html>
