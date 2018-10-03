@@ -1,0 +1,101 @@
+<html>
+ <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("button").click(function(){
+
+                    var to_compile = {
+                            "LanguageChoice": $("#sellang").val(),
+                            "Program": $("#code").val(),
+                            "Input": "",
+                            "CompilerArgs" : ""
+                    };
+
+                    $.ajax ({
+                                url: "http://rextester.com/rundotnet/api",
+                                type: "POST",
+                                data: to_compile
+                            }).done(function(data) {
+                                alert(JSON.stringify(data));
+                            }).fail(function(data, err) {
+                                alert("fail " + JSON.stringify(data) + " " + JSON.stringify(err));
+                        });
+            });
+    });
+    </script>
+    </head>
+ <body>
+ <form action = "">
+  <h1>Please select a language</h1>
+  <fieldset>
+  <select id = "sellang">
+   <option value = "1">C#</option>
+   <option value = "2">VB.NET</option>
+   <option value = "3">F#</option>
+   <option value = "4">Java</option>
+   <option value = "5" selected="selected">Python</option>
+   <option value = "6">C(gcc)</option>
+   <option value = "7">C++(gcc)</option>
+   <option value = "9">PHP</option>
+   <option value = "43">Kotlin</option>
+  </select>
+  
+  </fieldset>
+ </form>
+<textarea id="code" width = "100%" height = "100%">
+print("Enjoy coding in codefun")      
+    </textarea>
+    <button id="run">Run</button>
+
+
+
+
+ <!--
+
+ C# = 1
+    VB.NET = 2
+    F# = 3
+    Java = 4
+    Python = 5
+    C (gcc) = 6
+    C++ (gcc) = 7
+    Php = 8
+    Pascal = 9
+    Objective-C = 10
+    Haskell = 11
+    Ruby = 12
+    Perl = 13
+    Lua = 14
+    Nasm = 15
+    Sql Server = 16
+    Javascript = 17
+    Lisp = 18
+    Prolog = 19
+    Go = 20
+    Scala = 21
+    Scheme = 22
+    Node.js = 23
+    Python 3 = 24
+    Octave = 25
+    C (clang) = 26
+    C++ (clang) = 27    
+    C++ (vc++) = 28
+    C (vc) = 29
+    D = 30
+    R = 31
+    Tcl = 32
+    MySQL = 33
+    PostgreSQL = 34
+    Oracle = 35
+    Swift = 37
+    Bash = 38
+    Ada = 39
+    Erlang = 40
+    Elixir = 41
+    Ocaml = 42
+    Kotlin = 43
+    Brainfuck = 44
+    Fortran = 45 -->
+ </body>
+</html>
