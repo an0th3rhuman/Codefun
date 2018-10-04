@@ -1,0 +1,68 @@
+<html>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+
+
+    <div class="row">
+        <h3 style="margin-left:10% ;font:bold;">
+            Current Progress
+
+        </h3>
+        <h4>
+            <br>
+            <br>
+            <p style="margin-left:10% ;" class="text-info">Test Case passed.</p>
+        </h4>
+        <div class="col-lg-2" style="float: left;">
+            <div id="piechart"></div>
+        </div>
+        <div class="col-lg" >
+           
+               <div class="progress" id="progress" style="height:20px">
+    <div class="progress-bar" id="progress-bar"  style="width:0%;height:20px"></div>
+  </div>
+            </div>
+        </div>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+
+        var prog = getCookie("progress");
+        console.log(prog)
+        setTimeout(progressbar(prog),100)
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function deleteCookie(cname) {
+            var d = new Date(); //Create an date object
+            d.setTime(d.getTime() - (1000 * 60 * 60 * 24)); //Set the time to the past. 1000 milliseonds = 1 second
+            var expires = "expires=" + d.toGMTString(); //Compose the expirartion date
+            window.document.cookie = cname + "=" + "; " + expires;//Set the cookie with name and the expiration date
+
+        }
+
+        function progressbar(prog)
+        {
+           
+            bar = document.getElementById("progress-bar");
+            bar.style.width = prog+"%";
+            console.log("heyyy" + prog)
+        }
+    </script>       
+</html>

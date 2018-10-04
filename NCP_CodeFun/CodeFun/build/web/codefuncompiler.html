@@ -25,17 +25,32 @@
                         result = result.substring(0, result.length - 3);
                         console.log(result);
                         var Q = getCookie("Q");
+                        if(Q)
+                        {
                         if (Q == "1")
                         {
                             if (result == "true")
                             {
-                                var form = document.getElementById("hidden");
-                                form.submit();
+                                document.getElementById("result").innerHTML = "Output: " + result;
+                                 setTimeout(submitForm, 3000)
                             } else
                             {
                                 alert("Incorrect answer")
                             }
                         }
+                          if (Q == "2")
+                        {
+                            if (result == "29")
+                            {
+                                document.getElementById("result").innerHTML = "Output: " + result;
+                                setTimeout(submitForm, 3000)
+                              
+                            } else
+                            {
+                                alert("Incorrect answer")
+                            }
+                        }
+                    }
                         document.getElementById("result").innerHTML = "Output: " + result;
 
 
@@ -44,7 +59,11 @@
                     });
                 });
             });
-
+            function submitForm()
+            {
+                  var form = document.getElementById("hidden");
+                                form.submit();
+            }
             function getCookie(cname) {
                 var name = cname + "=";
                 var decodedCookie = decodeURIComponent(document.cookie);

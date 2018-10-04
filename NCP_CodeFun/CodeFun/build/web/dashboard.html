@@ -1,5 +1,10 @@
-<html>
-    <body>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+--><html>
+    <body style="overflow:hidden;">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <header class="page-header">
@@ -10,7 +15,7 @@
           <div style>
             <h1 style="color: darkgreen; font:bold;">Code, learn, develop with CodeFun.</h5>
             <h3  style="color: darkgreen; margin-left: 5%; " id="name"></h3>
-                <ul class="nav nav-tabs"style="margin-left:4%;">
+                <ul class="nav nav-tabs" style="margin-left: 4%;">
                     <li ><a href="Code.html">Solve</a></li>
                     <li ><a href="home.html">Progress</a></li>
                     <li><a href="contactus.html">Contact Us</a></li>
@@ -18,8 +23,24 @@
                     
                   </ul>
     </header>
-    <div class="row">
-
+    <div class="row" style="overflow:hidden;">
+          
+        <form action="compiler.html">
+            
+        <input  type="image" class="btn" src="./assets/compile.jpg" alt="compile" style="margin-left: 30%;height:10% ;width:20%; float: left; "> 
+        </form>
+    </div>
+        <div class="row" style="overflow:hidden;">
+        <form action="basic.html">
+            
+        <input  type="image" class="btn" src="./assets/basic.png" alt="basic" style="margin-left: 30%;height:30% ;width:20%; float: left; "> 
+        </form>
+    </div>
+        <div class="row" style="overflow:hidden;">
+        <form action="advanced.html">
+             
+        <input type="image" class="btn" src="./assets/advanced.png" alt="basic" style="margin-left:30%; margin-right:13%;height:30% ;width:20%; float: left; ">
+        </form>
     </div>
         <script>
            var username= getCookie("name");
@@ -41,5 +62,11 @@
   return "";
 }
             </script>
+            <style>
+                
+.row .btn:hover {
+    background-color: black;
+}
+            </style>
     </body>
 </html>

@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
---><html>
+<html>
     <body>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,26 +10,18 @@ and open the template in the editor.
           <div style>
             <h1 style="color: darkgreen; font:bold;">Code, learn, develop with CodeFun.</h5>
             <h3  style="color: darkgreen; margin-left: 5%; " id="name"></h3>
-                <ul class="nav nav-tabs" style="margin-left: 4%;">
+                <ul class="nav nav-tabs"style="margin-left:4%;">
+                    <li ><a href="Code.html">Solve</a></li>
                     <li ><a href="home.html">Progress</a></li>
-                     <li ><a href="dashboard.html">Home</a></li>
+                    <li ><a href="dashboard.html">Home</a></li>
                     <li><a href="contactus.html">Contact Us</a></li>
                       <li><a href="landingpage.html">Logout</a></li>
                     
                   </ul>
     </header>
     <div class="row">
-        
-        <form action="basic.html">
-            
-        <input  type="image" class="btn" src="./assets/basic.png" alt="basic" style="margin-left: 30%;height:20% ;width:30%; float: left; "> 
-        </form>
-    </div>
-        <div class="row">
-        <form action="advanced.html">
-             
-        <input type="image" class="btn" src="./assets/advanced.png" alt="basic" style="margin-left:30%; margin-right:13%;height:20% ;width:30%; float: left; ">
-        </form>
+      
+        <iframe src="codefuncompiler.html" style="margin-left: 15%; width:70%; height: 80%;"></iframe>
     </div>
         <script>
            var username= getCookie("name");
@@ -55,12 +42,15 @@ and open the template in the editor.
   }
   return "";
 }
-            </script>
-            <style>
-                
-.row .btn:hover {
-    background-color: black;
+  function deleteCookie(cname) {
+    var d = new Date(); //Create an date object
+    d.setTime(d.getTime() - (1000*60*60*24)); //Set the time to the past. 1000 milliseonds = 1 second
+    var expires = "expires=" + d.toGMTString(); //Compose the expirartion date
+    window.document.cookie = cname+"="+"; "+expires;//Set the cookie with name and the expiration date
+ 
 }
-            </style>
+
+
+        </script>
     </body>
 </html>
