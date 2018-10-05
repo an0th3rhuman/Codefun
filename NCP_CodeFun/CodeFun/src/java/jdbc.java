@@ -61,7 +61,27 @@ public class jdbc extends HttpServlet {
 
             }
             System.out.println("name: " + name);
+            Statement stmtname = con.createStatement();
+            int flag = 0;
+//step4 execute query  
+            ResultSet rs1 = stmtname.executeQuery("select * from status");
+            while (rs1.next()) {
+                System.out.println("huehuehe"+rs1.getString(1));
 
+                if (rs1.getString(1).equals(name)) {
+                    flag = 1;
+                }
+            }
+            int n=0;
+            int n1=0;
+            if (flag == 0) {
+                Statement stmt3 = con.createStatement();
+                System.out.println("Inside here "+name);
+             String sql=   "INSERT INTO status " +
+                   "VALUES(" + "'"+ name +"'" + ", 0,0)";
+                System.out.println(sql);
+                stmt3.executeUpdate(sql);
+            }
 //step3 create the statement object  
             Statement stmt = con.createStatement();
             String query = "";
@@ -77,7 +97,7 @@ public class jdbc extends HttpServlet {
             int count = stmt.executeUpdate(query);
             System.out.println("Updated queries: " + count);
             if (count >= 1) {
-                
+
                 System.out.println("name: " + name);
                 int progress = 0;
 //step3 create the statement object  
@@ -95,8 +115,6 @@ public class jdbc extends HttpServlet {
                 rs.close();
                 con.close();
 
-              
-
             }
             response.sendRedirect("progressbar.html");
 
@@ -108,7 +126,7 @@ public class jdbc extends HttpServlet {
         }
 
     }
-    
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

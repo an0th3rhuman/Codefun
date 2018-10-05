@@ -1,85 +1,87 @@
 <html>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
     <header class="page-header">
         <title>CodeFun.</title>
         <div >
             <span style="float: left; margin-left:5%; font-size: 50px;" class="fa fa-graduation-cap"></span>
-          </div>
-          <div style>
+        </div>
+        <div style>
             <h1 style="color: darkgreen; font:bold;">Code, learn, develop with CodeFun.</h5>
-                 <h3  style="color: darkgreen; margin-left: 5%; " id="name"></h3>
+                <h3  style="color: darkgreen; margin-left: 5%; " id="name"></h3>
                 <ul class="nav nav-tabs"style="margin-left:4%;">
                     <li ><a href="Code.html">Solve</a></li>
                     <li ><a href="home.html">Progress</a></li>
                     <li ><a href="dashboard.html">Home</a></li>
                     <li><a href="contactus.html">Contact Us</a></li>
-                      <li><a href="landingpage.html">Logout</a></li>
-                    
-                  </ul>
-    </header>
-   
-    <div class="row">
-        <h3 style="margin-left:10% ;font:bold;">
-           Current Progress
-          
-        </h3>
-        <h4>
-            <br>
-            <br>
-            <br>
-        </h4>  
-        <p style="margin-left:10% ;" class="text-info">Track your progress over here. We help you figure out your strengths and weaknesses.</p>
-    
-        <br>
-        <br>
-        <br>
-           <div  style="margin-left:10%;width:70%;overflow: hidden;" >
-           
-               <div class="progress" id="progress" style="height:20px">
-    <div class="progress-bar" id="progress-bar"  style="width:0%;height:20px"></div>
-  </div>
-            </div>     
-    </div>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script>
-        
-        var prog= getCookie("progress");
-        console.log(prog)
-        progressbar(prog);
-                    function getCookie(cname) {
-                var name = cname + "=";
-                var decodedCookie = decodeURIComponent(document.cookie);
-                var ca = decodedCookie.split(';');
-                for (var i = 0; i < ca.length; i++) {
-                    var c = ca[i];
-                    while (c.charAt(0) == ' ') {
-                        c = c.substring(1);
-                    }
-                    if (c.indexOf(name) == 0) {
-                        return c.substring(name.length, c.length);
-                    }
-                }
-                return "";
-            }
-            function deleteCookie(cname) {
-                var d = new Date(); //Create an date object
-                d.setTime(d.getTime() - (1000 * 60 * 60 * 24)); //Set the time to the past. 1000 milliseonds = 1 second
-                var expires = "expires=" + d.toGMTString(); //Compose the expirartion date
-                window.document.cookie = cname + "=" + "; " + expires;//Set the cookie with name and the expiration date
+                    <li><a href="landingpage.html">Logout</a></li>
 
-            }
-    
-function progressbar(prog)
-{
-    
-  bar = document.getElementById("progress-bar");
-            bar.style.width = prog+"%";
-            console.log("heyyy" + prog)
-}
-    </script>
-</html>
+                </ul>
+                </header>
+
+                <div class="row">
+                    <h3 style="margin-left:10% ;font:bold;">
+                        Current Progress
+
+                    </h3>
+                    <h4>
+                        <br>
+                        <br>
+                        <br>
+                    </h4>  
+                    <p style="margin-left:10% ;" class="text-info">Track your progress over here. We help you figure out your strengths and weaknesses.</p>
+
+                    <br>
+                    <br>
+                    <br>
+                    <div  style="margin-left:10%;width:70%;overflow: hidden;" >
+
+                        <div class="progress" id="progress" style="height:20px">
+                            <div class="progress-bar" id="progress-bar"  style="width:0%;height:20px"></div>
+                        </div>
+                    </div>     
+                </div>
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script>
+
+                    var prog = getCookie("progress");
+                    console.log(prog)
+                    progressbar(prog);
+                    deleteCookie("Q");
+                   
+                    function getCookie(cname) {
+                        var name = cname + "=";
+                        var decodedCookie = decodeURIComponent(document.cookie);
+                        var ca = decodedCookie.split(';');
+                        for (var i = 0; i < ca.length; i++) {
+                            var c = ca[i];
+                            while (c.charAt(0) == ' ') {
+                                c = c.substring(1);
+                            }
+                            if (c.indexOf(name) == 0) {
+                                return c.substring(name.length, c.length);
+                            }
+                        }
+                        return "";
+                    }
+                    function deleteCookie(cname) {
+                        var d = new Date(); //Create an date object
+                        d.setTime(d.getTime() - (1000 * 60 * 60 * 24)); //Set the time to the past. 1000 milliseonds = 1 second
+                        var expires = "expires=" + d.toGMTString(); //Compose the expirartion date
+                        window.document.cookie = cname + "=" + "; " + expires;//Set
+
+                    }
+
+                    function progressbar(prog)
+                    {
+
+                        bar = document.getElementById("progress-bar");
+                        bar.style.width = prog + "%";
+                        console.log("heyyy" + prog)
+                    }
+                </script>
+                </html>

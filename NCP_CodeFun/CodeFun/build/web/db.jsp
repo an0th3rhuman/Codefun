@@ -55,7 +55,8 @@
                      if(flag==0)
                      {
                      int i = connection.executeUpdate("insert into Sheet1(Name,email,password) values('" + name + "','" + email + "','" + password + "')");
-                     
+                                         response.sendRedirect("codefun.html");
+
                  
                  }
                      else

@@ -25,32 +25,33 @@
                         result = result.substring(0, result.length - 3);
                         console.log(result);
                         var Q = getCookie("Q");
-                        if(Q)
+                        if (Q)
                         {
-                        if (Q == "1")
-                        {
-                            if (result == "true")
+                            if (Q == "1")
                             {
-                                document.getElementById("result").innerHTML = "Output: " + result;
-                                 setTimeout(submitForm, 3000)
-                            } else
+                                if (result == "true")
+                                {
+                                    document.getElementById("result").innerHTML = "Output: " + result;
+                                    alert("Correct Answer")
+                                    setTimeout(submitForm, 1500)
+                                } else
+                                {
+                                    alert("Incorrect answer")
+                                }
+                            }
+                            if (Q == "2")
                             {
-                                alert("Incorrect answer")
+                                if (result == "29")
+                                {
+                                    document.getElementById("result").innerHTML = "Output: " + result;
+                                    setTimeout(submitForm, 3000)
+
+                                } else
+                                {
+                                    alert("Incorrect answer")
+                                }
                             }
                         }
-                          if (Q == "2")
-                        {
-                            if (result == "29")
-                            {
-                                document.getElementById("result").innerHTML = "Output: " + result;
-                                setTimeout(submitForm, 3000)
-                              
-                            } else
-                            {
-                                alert("Incorrect answer")
-                            }
-                        }
-                    }
                         document.getElementById("result").innerHTML = "Output: " + result;
 
 
@@ -61,8 +62,8 @@
             });
             function submitForm()
             {
-                  var form = document.getElementById("hidden");
-                                form.submit();
+                var form = document.getElementById("hidden");
+                form.submit();
             }
             function getCookie(cname) {
                 var name = cname + "=";
@@ -83,7 +84,7 @@
                 var d = new Date(); //Create an date object
                 d.setTime(d.getTime() - (1000 * 60 * 60 * 24)); //Set the time to the past. 1000 milliseonds = 1 second
                 var expires = "expires=" + d.toGMTString(); //Compose the expirartion date
-                window.document.cookie = cname + "=" + "; " + expires;//Set the cookie with name and the expiration date
+                window.document.cookie = cname + "=" + "; " + expires;//Set
 
             }
         </script>
